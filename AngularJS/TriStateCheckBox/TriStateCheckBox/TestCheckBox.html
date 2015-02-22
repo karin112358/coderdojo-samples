@@ -21,21 +21,21 @@
 		<h2>Tri-State Check Box</h2>
 		<div>
 			<p>
-				<span tri-state-check-box is-three-state="true" is-checked="myBooleanValue1">tri-state check box</span>
+				<span tri-state-check-box is-three-state="true" is-checked="myBooleanValue1" name="cb1">tri-state check box</span>
 			</p>
 			<p>
 				Check box value 1: {{myBooleanValue1 == null ? "-" : myBooleanValue1}}
 			</p>
 
 			<p>
-				<span tri-state-check-box is-three-state="true" is-checked="myBooleanValue1">tri-state check box</span>
+				<span tri-state-check-box is-three-state="true" is-checked="myBooleanValue1" name="cb2">tri-state check box</span>
 			</p>
 			<p>
 				Check box value 1: {{myBooleanValue1 == null ? "-" : myBooleanValue1}}
 			</p>
 
 			<p>
-				<span tri-state-check-box is-three-state="true" is-checked="myBooleanValue2">tri-state check box</span>
+				<span tri-state-check-box is-three-state="true" is-checked="myBooleanValue2" name="cb3">tri-state check box</span>
 			</p>
 			<p>
 				Check box value 2: {{myBooleanValue2 == null ? "-" : myBooleanValue2}}
@@ -46,7 +46,7 @@
 	<script type="text/javascript">
 		var sampleApp = angular.module("sampleApp", []);
 
-		sampleApp.directive("triStateCheckBox", ["$timeout", Samples.Controls.CheckBox.Create]);
+		sampleApp.directive("triStateCheckBox", [Samples.Controls.CheckBox.Create]);
 	</script>
 </body>
 </html>
