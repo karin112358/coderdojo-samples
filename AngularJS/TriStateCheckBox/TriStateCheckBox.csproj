@@ -62,6 +62,7 @@
     <Content Include="CheckBoxStates.html" />
     <Content Include="Scripts\Sample.js.map" />
     <Content Include="packages.config" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
