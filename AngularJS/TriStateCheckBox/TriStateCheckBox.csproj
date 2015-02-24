@@ -59,6 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CheckBoxStates.html" />
     <Content Include="Scripts\Sample.js.map" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -70,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Sample.js" />
+    <Content Include="TestCheckBoxWithoutBinding.html" />
     <Content Include="TestCheckBox.html" />
     <Content Include="Web.config" />
   </ItemGroup>

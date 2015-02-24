@@ -30,8 +30,8 @@ var Samples;
                 checkBox.template = "<input type=\"checkbox\" ng-click=\"updateState()\" /><span ng-transclude></span>";
                 checkBox.transclude = true;
                 checkBox.scope = new CheckBoxScopeDeclaration();
-                checkBox.scope.isChecked = "=";
-                checkBox.scope.isThreeState = "=";
+                checkBox.scope.isChecked = "=?";
+                checkBox.scope.isThreeState = "=?";
                 // Initialize component
                 checkBox.link = function (scope, element, attrs) {
                     scope.checkBox = element[0].childNodes[0];

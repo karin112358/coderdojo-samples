@@ -13,21 +13,18 @@
 	</style>
 </head>
 <body>
-	<div class="container" ng-controller="testCheckBoxController">
+	<div class="container">
 		<h1>Tri-State Check Box</h1>
 		<div class="jumbotron">
 			<div class="row">
 				<div class="col-md-4">
-					<p><span tri-state-check-box is-three-state="true" is-checked="myBooleanValue1">Tri-state check box 1</span></p>
-					<p>Check box value: {{myBooleanValue1 == null ? "-" : myBooleanValue1}}</p>
+					<p><span tri-state-check-box is-three-state="true" is-checked="null">Tri-state check box 1</span></p>
 				</div>
 				<div class="col-md-4">
-					<p><span tri-state-check-box is-three-state="true" is-checked="myBooleanValue2">Tri-state check box 2</span></p>
-					<p>Check box value: {{myBooleanValue2 == null ? "-" : myBooleanValue2}}</p>
+					<p><span tri-state-check-box is-three-state="true" is-checked="true">Tri-state check box 2</span></p>
 				</div>
 				<div class="col-md-4">
-					<p><span tri-state-check-box is-three-state="true" is-checked="myBooleanValue3">Tri-state check box 3</span></p>
-					<p>Check box value: {{myBooleanValue3 == null ? "-" : myBooleanValue3}}</p>
+					<p><span tri-state-check-box is-three-state="true" is-checked="false">Tri-state check box 3</span></p>
 				</div>
 			</div>
 		</div>
@@ -37,12 +34,6 @@
 		var sampleApp = angular.module("sampleApp", []);
 
 		sampleApp.directive("triStateCheckBox", [Samples.Controls.CheckBox.Create]);
-
-		sampleApp.controller("testCheckBoxController", ['$scope', function ($scope) {
-			$scope.myBooleanValue1 = null;
-			$scope.myBooleanValue2 = true;
-			$scope.myBooleanValue3 = false;
-		}]);
 	</script>
 </body>
 </html>
