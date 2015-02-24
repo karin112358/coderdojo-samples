@@ -1,6 +1,5 @@
 /// <reference path="../../Scripts/typings/jquery/jquery.d.ts" />
 /// <reference path="../../Scripts/typings/angularjs/angular.d.ts" /> 
-"use strict";
 var Samples;
 (function (Samples) {
     var Controls;
@@ -30,20 +29,20 @@ var Samples;
                 checkBox.template = "<input type=\"checkbox\" ng-click=\"updateState()\" /><span ng-transclude></span>";
                 checkBox.transclude = true;
                 checkBox.scope = new CheckBoxScopeDeclaration();
-                checkBox.scope.isChecked = "=?";
-                checkBox.scope.isThreeState = "=?";
+                checkBox.scope.isChecked = "=";
+                checkBox.scope.isThreeState = "=";
                 // Initialize component
-                checkBox.link = function (scope, element, attrs) {
-                    scope.checkBox = element[0].childNodes[0];
-                    scope.checkBox.indeterminate = scope.isThreeState && scope.isChecked == null;
-                    scope.checkBox.checked = scope.isChecked;
-                    // Update the scope values when the checked attribute of the checkbox control has changed.
-                    scope.updateState = function () { return CheckBox.UpdateState(scope); };
+                checkBox.link = function ($scope, element, attrs) {
+                    var checkBoxInputElement = element[0].childNodes[0];
+                    checkBoxInputElement.indeterminate = $scope.isThreeState && $scope.isChecked == null;
+                    checkBoxInputElement.checked = $scope.isChecked;
+                    // Update the scope values when the checkbox is clicked.
+                    $scope.updateState = function () { return checkBox.UpdateState($scope); };
                     // Update the checked and indeterminate attribute of the checkbox control.
-                    scope.$watch("isChecked", function (newValue, oldValue) {
+                    $scope.$watch("isChecked", function (newValue, oldValue) {
                         if (oldValue != newValue) {
-                            scope.checkBox.indeterminate = scope.isThreeState && newValue == null;
-                            scope.checkBox.checked = newValue;
+                            checkBoxInputElement.indeterminate = $scope.isThreeState && newValue == null;
+                            checkBoxInputElement.checked = newValue;
                         }
                     }, true);
                 };
@@ -53,15 +52,15 @@ var Samples;
             * Change state of isChecked in scope if attribute checked on checkbox has changed.
             * @param {ICheckBoxScope} scope - The scope of the CheckBox directive.
             */
-            CheckBox.UpdateState = function (scope) {
-                if (scope.isChecked === false) {
-                    scope.isChecked = true;
+            CheckBox.prototype.UpdateState = function ($scope) {
+                if ($scope.isChecked === false) {
+                    $scope.isChecked = true;
                 }
-                else if (scope.isChecked === true && scope.isThreeState) {
-                    scope.isChecked = null;
+                else if ($scope.isChecked === true && $scope.isThreeState) {
+                    $scope.isChecked = null;
                 }
                 else {
-                    scope.isChecked = false;
+                    $scope.isChecked = false;
                 }
             };
             return CheckBox;
