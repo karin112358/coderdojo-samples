@@ -1,18 +1,21 @@
 ﻿class HomeController {
-	public books: Book[] = [];
+	public books: IBook[] = [];
 
 	constructor(private $http: ng.IHttpService) {
 		this.loadBooks();
 	}
 
 	private loadBooks() {
-		this.books = [{ title: "Book 1", price: 20.50 }, { title: "Book 2", price: 11.90 }];
+		this.$http.get("/api/books")
+			.success((result: IBook[]) => {
+				this.books = result;
+			});
 	}
 }
 
-class Book {
-	public title: string;
-	public price: number;
+interface IBook {
+	title: string;
+	price: number;
 }
 
 angular.module("angularApp").controller("HomeController", ["$http", HomeController]);

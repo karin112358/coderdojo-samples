@@ -77,7 +77,8 @@ gulp.task("typescript", ["cleanCustomScipts"], function () {
 	  	out: "application.js"
 	  }));
 
-	return tsResult.js.pipe(gulp.dest("wwwroot/scripts"));
+	return tsResult.js
+		.pipe(gulp.dest("wwwroot/scripts"));
 });
 
 gulp.task("typescript:watch", function () {
