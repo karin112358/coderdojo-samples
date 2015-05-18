@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='scripts' ProjectOpened='customStyles:watch, typescript:watch' />
+﻿/// <binding BeforeBuild='customStyles, typescript, scripts' ProjectOpened='customStyles:watch, typescript:watch' />
 /*
 This file in the main entry point for defining Gulp tasks and using Gulp plugins.
 Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
@@ -24,15 +24,15 @@ gulp.task("cleanScripts", function () {
 	del.sync(["wwwroot/scripts/dependencies.min.js"]);
 	del.sync(["wwwroot/styles/dependencies.min.css"]);
 	del.sync(["wwwroot/fonts/*.*"]);
+	del.sync(["wwwroot/styles/*.eot"]);
+	del.sync(["wwwroot/styles/*.svg"]);
+	del.sync(["wwwroot/styles/*.ttf"]);
+	del.sync(["wwwroot/styles/*.woff"]);
 });
 
 // Delete custom styles
 gulp.task("cleanCustomStyles", function () {
 	del.sync(["wwwroot/styles/styles.min.css"]);
-	del.sync(["wwwroot/styles/*.eot"]);
-	del.sync(["wwwroot/styles/*.svg"]);
-	del.sync(["wwwroot/styles/*.ttf"]);
-	del.sync(["wwwroot/styles/*.woff"]);
 });
 
 // Delete custom scripts
