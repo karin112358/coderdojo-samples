@@ -12,9 +12,10 @@ var del = require("del");
 var sass = require("gulp-sass");
 var ts = require("gulp-typescript");
 
-var dependencyScripts = ["bower_components/jquery/dist/jquery.js", "bower_components/angularjs/angular.js", "node_modules/angular-new-router/dist/router.es5.js", "bower_components/bootstrap/dist/js/bootstrap.js"];
-var dependencyStylesheets = ["bower_components/bootstrap/dist/css/bootstrap.css", "bower_components/bootstrap/dist/css/bootstrap-theme.css"];
-var dependencyFonts = ["bower_components/bootstrap/dist/fonts/*.*"];
+var dependencyScripts = ["bower_components/jquery/dist/jquery.js", "bower_components/angularjs/angular.js", "bower_components/angular-ui-grid/ui-grid.js", "node_modules/angular-new-router/dist/router.es5.js", "bower_components/bootstrap/dist/js/bootstrap.js"];
+var dependencyStylesheets = ["bower_components/angular-ui-grid/ui-grid.css", "bower_components/bootstrap/dist/css/bootstrap.css", "bower_components/bootstrap/dist/css/bootstrap-theme.css"];
+var bootstrapFonts = ["bower_components/bootstrap/dist/fonts/*.*"];
+var uiGridResources = ["bower_components/angular-ui-grid/ui-grid.eot", "bower_components/angular-ui-grid/ui-grid.svg", "bower_components/angular-ui-grid/ui-grid.ttf", "bower_components/angular-ui-grid/ui-grid.woff"];
 var customStylesheets = ["styles/styles.scss"];
 var typescriptFiles = ["wwwroot/*.ts", "wwwroot/**/*.ts"];
 
@@ -28,6 +29,10 @@ gulp.task("cleanScripts", function () {
 // Delete custom styles
 gulp.task("cleanCustomStyles", function () {
 	del.sync(["wwwroot/styles/styles.min.css"]);
+	del.sync(["wwwroot/styles/*.eot"]);
+	del.sync(["wwwroot/styles/*.svg"]);
+	del.sync(["wwwroot/styles/*.ttf"]);
+	del.sync(["wwwroot/styles/*.woff"]);
 });
 
 // Delete custom scripts
@@ -46,8 +51,11 @@ gulp.task("scripts", ["cleanScripts", "customStyles"], function () {
 	  .pipe(concat("dependencies.min.css"))
 	  .pipe(gulp.dest("wwwroot/styles/"));
 
-	gulp.src(dependencyFonts)
+	gulp.src(bootstrapFonts)
 	  .pipe(gulp.dest("wwwroot/fonts/"));
+
+	gulp.src(uiGridResources)
+	  .pipe(gulp.dest("wwwroot/styles/"));
 });
 
 gulp.task("customStyles", ["cleanCustomStyles"], function () {
@@ -78,4 +86,4 @@ gulp.task("typescript:watch", function () {
 
 
 //Set a default tasks
-//gulp.task("default", ["scripts"], function () { });
+gulp.task("default", ["scripts"], function () { });
