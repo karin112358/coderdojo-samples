@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="ngApp">
+<head>
+	<meta charset="utf-8" />
+	<title>snap.svg</title>
+	<link rel="stylesheet" href="app.css" type="text/css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0-rc.0/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0-rc.1/i18n/angular-locale_de.js"></script>
+	<script src="https://cdn.rawgit.com/angular/router/v0.5.0/dist/router.es5.js"></script>
+</head>
+<body ng-controller="AppController as app">
+	<a ng-link="home">Home</a>
+	<a ng-link="page1">Page 1</a>
+
+	<h1>{{title}}</h1>
+	<div ng-viewport></div>
+
+	<script src="components/home/home.js"></script>
+	<script src="components/page1/page1.js"></script>
+	<script type="text/javascript">
+		angular.module('ngApp', ['ngNewRouter', 'ngLocale', 'ngApp.home', 'ngApp.page1'])
+			.controller('AppController', ['$scope', '$router', function ($scope, $router) {
+				$scope.title = "Demo"
+
+				$router.config([
+					{ path: '/', redirectTo: '/home' },
+					{ path: '/home', component: 'home' },
+					{ path: '/page1', component: 'page1' }
+				]);
+
+				//$locationProvider.html5Mode({ enabled: true, requireBase: true });
+			}]);
+	</script>
+</body>
+</html>
