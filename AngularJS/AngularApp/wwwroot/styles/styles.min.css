@@ -1,0 +1,6 @@
+body
+> div.container:first-of-type {
+  margin-top: 70px; }
+
+h1, h2, h3 {
+  color: #e67428; }

@@ -3,10 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <title>AngularJS Application</title>
-	<link href="Styles/dependencies.min.css" type="text/css" rel="stylesheet" />
-	<script src="Scripts/dependencies.min.js"></script>
+	<link href="styles/dependencies.min.css" type="text/css" rel="stylesheet" />
+	<link href="styles/styles.min.css" type="text/css" rel="stylesheet" />
 </head>
-<body>
-	test
+<body ng-app="angularApp" ng-controller="AppController as app">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">AngularJS Application</a>
+			</div>
+			<div id="navbar">
+				<ul class="nav navbar-nav">
+					<li><a ng-link="home">Link 1</a></li>
+					<li><a ng-link="area1">Link 2</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<h2>AngularJS Application</h2>
+	</div>
+
+	<div class="container" ng-viewport></div>
+
+	<script src="scripts/dependencies.min.js"></script>
+	<script src="scripts/application.js"></script>
 </body>
 </html>
