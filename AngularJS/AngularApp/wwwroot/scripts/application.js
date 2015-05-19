@@ -22,6 +22,13 @@ var Area2Controller = (function () {
     return Area2Controller;
 })();
 angular.module("angularApp").controller("Area2Controller", Area2Controller);
+var LoginController = (function () {
+    function LoginController() {
+        this.name = "Login Test";
+    }
+    return LoginController;
+})();
+angular.module("angularApp").controller("LoginController", [LoginController]);
 var HomeController = (function () {
     function HomeController($scope, $http) {
         this.$scope = $scope;
@@ -38,10 +45,3 @@ var HomeController = (function () {
     return HomeController;
 })();
 angular.module("angularApp").controller("HomeController", ["$http", HomeController]);
-var LoginController = (function () {
-    function LoginController() {
-        this.name = "Login Test";
-    }
-    return LoginController;
-})();
-angular.module("angularApp").controller("LoginController", [LoginController]);
