@@ -1,16 +1,19 @@
 ﻿class HomeController {
-	public books: IBook[] = [];
-
-	constructor(private $http: ng.IHttpService) {
+	constructor(private $scope: IBookScope, private $http: ng.IHttpService) {
+		this.$scope.books = [];
 		this.loadBooks();
 	}
 
 	private loadBooks() {
 		this.$http.get("/api/books")
 			.success((result: IBook[]) => {
-				this.books = result;
+				this.$scope.books = result;
 			});
 	}
+}
+
+interface IBookScope extends ng.IScope {
+	books: IBook[]
 }
 
 interface IBook {

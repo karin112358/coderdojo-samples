@@ -1,18 +1,21 @@
 ﻿/// <reference path="../typings/tsd.d.ts" />
 
 class AppController {
-	constructor($router: any, $http: ng.IHttpService) {
-		$router.config([
-			{ path: '/', redirectTo: '/home' },
-			{ path: "/home", component: "home" },
-			{ path: "/area1", component: "area1" },
-			{ path: "/area2", component: "area2" },
-			{ path: "/login", component: "login" }
-		]);
-
+	constructor($http: ng.IHttpService) {
 		$http.defaults.headers.common["Authorization"] = "Basic " + btoa("test" + ":" + "test");
+	}
+
+	public static config($stateProvider: angular.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
+		$urlRouterProvider.otherwise("/home");
+
+		$stateProvider
+			.state("home", { url: "/home", templateUrl: "/components/home/home.html", controller: HomeController })
+			.state("area1", { url: "/area1", templateUrl: "components/area1/area1.html", controller: Area1Controller })
+			.state("area2", { url: "/area2", templateUrl: "components/area2/area2.html", controller: Area2Controller })
+			.state("login", { url: "/login", templateUrl: "components/login/login.html", controller: LoginController });
 	}
 }
 
-angular.module("angularApp", ["ngNewRouter", "ui.grid"])
-	.controller("AppController", ["$router", "$http", AppController]);
+angular.module("angularApp", ["ui.router", "ui.grid"])
+	.config(["$stateProvider", "$urlRouterProvider", AppController.config])
+	.controller("AppController", ["$http", AppController]);

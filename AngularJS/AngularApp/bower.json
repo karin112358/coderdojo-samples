@@ -1,20 +1,21 @@
 {
-	"name": "bower",
-	"license": "Apache-2.0",
-	"private": true,
-	"dependencies": {
-		"bootstrap": "~3.3.4",
-		"angularjs": "~1.4.0-rc.0",
-		"angular-ui-grid": "~3.0.0-rc.21"
-	},
-	"exportsOverride": {
-		"bootstrap": {
-			"js": "dist/js/*.*",
-			"css": "dist/css/*.*",
-			"fonts": "dist/fonts/*.*"
-		},
-		"jquery": {
-			"js": "jquery.{js,min.js,min.map}"
-		}
-	}
+  "name": "bower",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "angularjs": "~1.4.0-rc.0",
+	"angular-ui-grid": "~3.0.0-rc.21",
+	"angular-ui-router": "~0.2.14"
+  },
+  "exportsOverride": {
+    "bootstrap": {
+      "js": "dist/js/*.*",
+      "css": "dist/css/*.*",
+      "fonts": "dist/fonts/*.*"
+    },
+    "jquery": {
+      "js": "jquery.{js,min.js,min.map}"
+    }
+  }
 }

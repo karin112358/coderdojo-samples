@@ -12,7 +12,7 @@ var del = require("del");
 var sass = require("gulp-sass");
 var ts = require("gulp-typescript");
 
-var dependencyScripts = ["bower_components/jquery/dist/jquery.js", "bower_components/angularjs/angular.js", "bower_components/angular-ui-grid/ui-grid.js", "node_modules/angular-new-router/dist/router.es5.js", "bower_components/bootstrap/dist/js/bootstrap.js"];
+var dependencyScripts = ["bower_components/jquery/dist/jquery.js", "bower_components/angularjs/angular.js", "bower_components/angular-ui-grid/ui-grid.js", "bower_components/angular-ui-router/release/angular-ui-router.js", "bower_components/bootstrap/dist/js/bootstrap.js"];
 var dependencyStylesheets = ["bower_components/angular-ui-grid/ui-grid.css", "bower_components/bootstrap/dist/css/bootstrap.css", "bower_components/bootstrap/dist/css/bootstrap-theme.css"];
 var bootstrapFonts = ["bower_components/bootstrap/dist/fonts/*.*"];
 var uiGridResources = ["bower_components/angular-ui-grid/ui-grid.eot", "bower_components/angular-ui-grid/ui-grid.svg", "bower_components/angular-ui-grid/ui-grid.ttf", "bower_components/angular-ui-grid/ui-grid.woff"];

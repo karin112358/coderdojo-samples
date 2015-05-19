@@ -10,22 +10,22 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">AngularJS Application</a>
+				<a class="navbar-brand" ui-sref="home">AngularJS Application</a>
 			</div>
 			<div id="navbar">
 				<ul class="nav navbar-nav">
-					<li><a ng-link="home">Home</a></li>
-					<li><a ng-link="area1">Area 1</a></li>
-					<li><a ng-link="area2">Area 2</a></li>
+					<li><a ui-sref="home">Home</a></li>
+					<li><a ui-sref="area1">Area 1</a></li>
+					<li><a ui-sref="area2">Area 2</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a ng-link="login">Login</a></li>
+					<li><a ui-sref="login">Login</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-	<div class="container" ng-viewport></div>
+	<div class="container" ui-view></div>
 
 	<script src="scripts/dependencies.min.js"></script>
 	<script src="scripts/application.js"></script>

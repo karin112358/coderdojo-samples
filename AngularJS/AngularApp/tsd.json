@@ -10,6 +10,9 @@
     },
     "angularjs/angular.d.ts": {
       "commit": "e42bef3a8f9024a50468b12202df69519315b023"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "2bb8240a01eed264c1b22bc80f666d94faaef394"
     }
   }
 }
