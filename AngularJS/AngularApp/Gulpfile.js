@@ -11,6 +11,7 @@ var uglify = require("gulp-uglify");
 var del = require("del");
 var sass = require("gulp-sass");
 var ts = require("gulp-typescript");
+var sourcemaps = require("gulp-sourcemaps");
 var changed = require("gulp-changed");
 var newer = require('gulp-newer');
 var minifycss = require("gulp-minify-css");
@@ -19,7 +20,7 @@ var dependencyScripts = ["bower_components/jquery/dist/jquery.js", "bower_compon
 var dependencyStylesheets = ["bower_components/angular-ui-grid/ui-grid.css", "bower_components/bootstrap/dist/css/bootstrap.css", "bower_components/bootstrap/dist/css/bootstrap-theme.css"];
 var bootstrapFonts = ["bower_components/bootstrap/dist/fonts/*.*"];
 var uiGridResources = ["bower_components/angular-ui-grid/ui-grid.eot", "bower_components/angular-ui-grid/ui-grid.svg", "bower_components/angular-ui-grid/ui-grid.ttf", "bower_components/angular-ui-grid/ui-grid.woff"];
-var customStylesheets = ["styles/styles.scss"];
+var customStylesheets = ["wwwroot/components/styles/styles.scss"];
 var typescriptFiles = ["wwwroot/*.ts", "wwwroot/**/*.ts"];
 
 // Delete scripts for dependencies
@@ -63,7 +64,9 @@ gulp.task("dependencyScriptsAndStyles", [], function () {
 gulp.task("sass", [], function () {
 	gulp.src(customStylesheets)
 		.pipe(newer("wwwroot/styles/styles.min.css"))
-		.pipe(sass({ style: "expanded" }).on("error", sass.logError))
+		.pipe(sass({
+			sourcemap: true, sourcemapPath: "wwwroot/components/styles"
+		}))
 		.pipe(minifycss())
 		.pipe(concat("styles.min.css"))
 		.pipe(gulp.dest("wwwroot/styles/"));
@@ -74,21 +77,20 @@ gulp.task("sass:watch", function () {
 });
 
 gulp.task("typescript", [], function () {
-	var tsResult = gulp.src(typescriptFiles)
+	return gulp.src(typescriptFiles)
 		.pipe(newer("wwwroot/scripts/application.js"))
+		.pipe(sourcemaps.init())
 		.pipe(ts({
 			noImplicitAny: true,
 			out: "application.js"
-		}));
-
-	return tsResult.js
+		}))
+		.pipe(sourcemaps.write("./maps"))
 		.pipe(gulp.dest("wwwroot/scripts"));
 });
 
 gulp.task("typescript:watch", function () {
 	gulp.watch(["wwwroot/*.ts", "wwwroot/**/*.ts"], ["typescript"]);
 });
-
 
 //Set a default tasks
 gulp.task("default", ["clean", "sass", "typescript", "dependencyScriptsAndStyles"], function () { });

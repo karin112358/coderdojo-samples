@@ -16,19 +16,6 @@ var Area1Controller = (function () {
     return Area1Controller;
 })();
 angular.module("angularApp").controller("Area1Controller", Area1Controller);
-var Area2Controller = (function () {
-    function Area2Controller() {
-    }
-    return Area2Controller;
-})();
-angular.module("angularApp").controller("Area2Controller", Area2Controller);
-var LoginController = (function () {
-    function LoginController() {
-        this.name = "Login Test";
-    }
-    return LoginController;
-})();
-angular.module("angularApp").controller("LoginController", [LoginController]);
 var HomeController = (function () {
     function HomeController($scope, $http) {
         this.$scope = $scope;
@@ -45,3 +32,18 @@ var HomeController = (function () {
     return HomeController;
 })();
 angular.module("angularApp").controller("HomeController", ["$http", HomeController]);
+var Area2Controller = (function () {
+    function Area2Controller() {
+    }
+    return Area2Controller;
+})();
+angular.module("angularApp").controller("Area2Controller", Area2Controller);
+var LoginController = (function () {
+    function LoginController() {
+        this.name = "Login Test";
+    }
+    return LoginController;
+})();
+angular.module("angularApp").controller("LoginController", [LoginController]);
+
+//# sourceMappingURL=maps/application.js.map
