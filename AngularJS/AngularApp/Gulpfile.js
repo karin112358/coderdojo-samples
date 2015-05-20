@@ -35,6 +35,7 @@ gulp.task("clean", function () {
 	del.sync(["wwwroot/styles/*.woff"]);
 
 	del.sync(["wwwroot/styles/styles.min.css"]);
+	del.sync(["wwwroot/styles/styles.css"]);
 	del.sync(["wwwroot/styles/bootstrap.css"]);
 
 	del.sync(["wwwroot/scripts/application.js"]);
@@ -75,6 +76,11 @@ gulp.task("sass", [], function () {
 		}))
 		.pipe(minifycss())
 		.pipe(concat("styles.min.css"))
+		.pipe(gulp.dest("wwwroot/styles/"));
+
+	gulp.src(customStylesheets)
+		.pipe(newer("wwwroot/styles/styles.css"))
+		.pipe(concat("styles.css"))
 		.pipe(gulp.dest("wwwroot/styles/"));
 });
 

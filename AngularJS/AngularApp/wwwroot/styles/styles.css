@@ -1,4 +1,4 @@
-﻿@import "_colors.scss";
+@import "_colors.scss";
 
 body {
 	> div.container:first-of-type
@@ -9,4 +9,7 @@ body {
 
 h1, h2, h3 {
 	color: $highlight-color;
+}
+
+button.testkarin {
 }
