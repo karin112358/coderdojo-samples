@@ -19,6 +19,7 @@ var minifycss = require("gulp-minify-css");
 var dependencyScripts = ["bower_components/jquery/dist/jquery.js", "bower_components/angularjs/angular.js", "bower_components/angular-ui-grid/ui-grid.js", "bower_components/angular-ui-router/release/angular-ui-router.js", "bower_components/bootstrap/dist/js/bootstrap.js"];
 var dependencyStylesheets = ["bower_components/angular-ui-grid/ui-grid.css", "bower_components/bootstrap/dist/css/bootstrap.css", "bower_components/bootstrap/dist/css/bootstrap-theme.css"];
 var bootstrapFonts = ["bower_components/bootstrap/dist/fonts/*.*"];
+var bootstrapCss = ["bower_components/bootstrap/dist/css/bootstrap.css"];
 var uiGridResources = ["bower_components/angular-ui-grid/ui-grid.eot", "bower_components/angular-ui-grid/ui-grid.svg", "bower_components/angular-ui-grid/ui-grid.ttf", "bower_components/angular-ui-grid/ui-grid.woff"];
 var customStylesheets = ["wwwroot/components/styles/styles.scss"];
 var typescriptFiles = ["wwwroot/*.ts", "wwwroot/**/*.ts"];
@@ -34,6 +35,7 @@ gulp.task("clean", function () {
 	del.sync(["wwwroot/styles/*.woff"]);
 
 	del.sync(["wwwroot/styles/styles.min.css"]);
+	del.sync(["wwwroot/styles/bootstrap.css"]);
 
 	del.sync(["wwwroot/scripts/application.js"]);
 });
@@ -50,6 +52,10 @@ gulp.task("dependencyScriptsAndStyles", [], function () {
 		.pipe(newer("wwwroot/styles/dependencies.min.css"))
 		.pipe(minifycss())
 		.pipe(concat("dependencies.min.css"))
+		.pipe(gulp.dest("wwwroot/styles/"));
+
+	gulp.src(bootstrapCss)
+		.pipe(changed("wwwroot/styles/"))
 		.pipe(gulp.dest("wwwroot/styles/"));
 
 	gulp.src(bootstrapFonts)
