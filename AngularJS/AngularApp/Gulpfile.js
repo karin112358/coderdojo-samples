@@ -16,7 +16,7 @@ var changed = require("gulp-changed");
 var newer = require('gulp-newer');
 var minifycss = require("gulp-minify-css");
 
-var dependencyScripts = ["bower_components/jquery/dist/jquery.js", "bower_components/angularjs/angular.js", "bower_components/angular-ui-grid/ui-grid.js", "bower_components/angular-ui-router/release/angular-ui-router.js", "bower_components/bootstrap/dist/js/bootstrap.js"];
+var dependencyScripts = ["bower_components/jquery/dist/jquery.js", "bower_components/angularjs/angular.js", "bower_components/angular-ui-grid/ui-grid.js", "bower_components/angular-ui-router/release/angular-ui-router.js", "bower_components/bootstrap/dist/js/bootstrap.js", "bower_components/angular-bootstrap/ui-bootstrap-tpls.js"];
 var dependencyStylesheets = ["bower_components/angular-ui-grid/ui-grid.css", "bower_components/bootstrap/dist/css/bootstrap.css", "bower_components/bootstrap/dist/css/bootstrap-theme.css"];
 var bootstrapFonts = ["bower_components/bootstrap/dist/fonts/*.*"];
 var bootstrapCss = ["bower_components/bootstrap/dist/css/bootstrap.css"];
@@ -26,6 +26,7 @@ var typescriptFiles = ["wwwroot/*.ts", "wwwroot/**/*.ts"];
 
 // Delete scripts for dependencies
 gulp.task("clean", function () {
+	del.sync(["wwwroot/scripts/ui-bootstrap-tpls.js"]);
 	del.sync(["wwwroot/scripts/dependencies.min.js"]);
 	del.sync(["wwwroot/styles/dependencies.min.css"]);
 	del.sync(["wwwroot/fonts/*.*"]);
@@ -47,9 +48,6 @@ gulp.task("dependencyScriptsAndStyles", [], function () {
 		.pipe(newer("wwwroot/scripts/dependencies.min.js"))
 		.pipe(uglify())
 		.pipe(concat("dependencies.min.js"))
-		.pipe(gulp.dest("wwwroot/scripts/"));
-
-	gulp.src("bower_components/angular-bootstrap/ui-bootstrap-tpls.js")
 		.pipe(gulp.dest("wwwroot/scripts/"));
 
 	gulp.src(dependencyStylesheets)

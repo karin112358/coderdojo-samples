@@ -22,13 +22,6 @@ var Area2Controller = (function () {
     return Area2Controller;
 })();
 angular.module("angularApp").controller("Area2Controller", Area2Controller);
-var LoginController = (function () {
-    function LoginController() {
-        this.name = "Login Test";
-    }
-    return LoginController;
-})();
-angular.module("angularApp").controller("LoginController", [LoginController]);
 var BookController = (function () {
     function BookController($scope, $http, $modalInstance, bookId) {
         var _this = this;
@@ -109,5 +102,12 @@ var HomeController = (function () {
     return HomeController;
 })();
 angular.module("angularApp").controller("HomeController", ["$scope", "$http", "$modal", HomeController]);
+var LoginController = (function () {
+    function LoginController() {
+        this.name = "Login Test";
+    }
+    return LoginController;
+})();
+angular.module("angularApp").controller("LoginController", [LoginController]);
 
 //# sourceMappingURL=maps/application.js.map
