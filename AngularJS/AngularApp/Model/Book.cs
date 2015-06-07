@@ -8,8 +8,12 @@ namespace AngularApp.Model
 {
 	public class Book
 	{
+		[JsonProperty(PropertyName = "id")]
+		public Guid Id { get; set; }
+
 		[JsonProperty(PropertyName = "title")]
 		public string Title { get; set; }
+
 		[JsonProperty(PropertyName = "price")]
 		public decimal Price { get; set; }
 	}

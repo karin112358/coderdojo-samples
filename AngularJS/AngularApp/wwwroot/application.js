@@ -9,4 +9,4 @@ var AppController = (function () {
     };
     return AppController;
 })();
-angular.module("angularApp", ["ui.router", "ui.grid"]).config(["$stateProvider", "$urlRouterProvider", AppController.config]).controller("AppController", ["$http", AppController]);
+angular.module("angularApp", ["ui.router", "ui.grid", "ui.bootstrap"]).config(["$stateProvider", "$urlRouterProvider", AppController.config]).controller("AppController", ["$http", AppController]);

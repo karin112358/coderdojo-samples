@@ -49,6 +49,9 @@ gulp.task("dependencyScriptsAndStyles", [], function () {
 		.pipe(concat("dependencies.min.js"))
 		.pipe(gulp.dest("wwwroot/scripts/"));
 
+	gulp.src("bower_components/angular-bootstrap/ui-bootstrap-tpls.js")
+		.pipe(gulp.dest("wwwroot/scripts/"));
+
 	gulp.src(dependencyStylesheets)
 		.pipe(newer("wwwroot/styles/dependencies.min.css"))
 		.pipe(minifycss())

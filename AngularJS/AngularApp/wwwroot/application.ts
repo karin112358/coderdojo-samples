@@ -16,6 +16,6 @@ class AppController {
 	}
 }
 
-angular.module("angularApp", ["ui.router", "ui.grid"])
+angular.module("angularApp", ["ui.router", "ui.grid", "ui.bootstrap"])
 	.config(["$stateProvider", "$urlRouterProvider", AppController.config])
 	.controller("AppController", ["$http", AppController]);
