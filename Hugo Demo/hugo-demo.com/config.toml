@@ -1,0 +1,6 @@
+# Hugo variables
+#
+baseurl = "https://example.org/"
+languageCode = "en-us"
+title = "Hugo Bootstrap v4 Blog"
+theme = "karin-theme"

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Bootstrap v4 Blog</title>
+    <link>https://example.org/index.xml</link>
+    <description>Recent content on Hugo Bootstrap v4 Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Mar 2017 17:03:18 +0100</lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My Second Page</title>
+      <link>https://example.org/page2/</link>
+      <pubDate>Thu, 16 Mar 2017 17:03:18 +0100</pubDate>
+      
+      <guid>https://example.org/page2/</guid>
+      <description>&lt;p&gt;fadsfasf&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My First Page</title>
+      <link>https://example.org/page1/</link>
+      <pubDate>Thu, 16 Mar 2017 16:20:49 +0100</pubDate>
+      
+      <guid>https://example.org/page1/</guid>
+      <description>
+
+&lt;h1 id=&#34;seite-1&#34;&gt;Seite 1&lt;/h1&gt;
+
+&lt;p&gt;bla bla bla&lt;/p&gt;
+
+&lt;h2 id=&#34;überschrift-1&#34;&gt;Überschrift 1&lt;/h2&gt;
+
+&lt;p&gt;bla bla bla&lt;/p&gt;
+
+&lt;h3 id=&#34;überschrift-2&#34;&gt;Überschrift 2&lt;/h3&gt;
+
+&lt;p&gt;bla bla bla&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
