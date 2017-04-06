@@ -46,5 +46,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <script src="/js/lunr.js"></script>
+    <script>
+$(document).ready(function () {
+    'use strict';
+
+    // Set up search
+    var index, store;
+    $.getJSON('/lunr.json', function (response) {
+
+        // Create index
+        index = lunr.Index.load(response.index);
+
+        // Create store
+        store = response.store;
+
+        // Handle search
+        $('input#search').on('keyup', function () {
+            // Get query
+            var query = $(this).val();
+
+            // Search for it
+            var result = index.search(query);
+
+            // Output it
+            var resultdiv = $('ul.searchresults');
+            if (result.length === 0) {
+                // Hide results
+                resultdiv.hide();
+            } else {
+                // Show results
+                resultdiv.empty();
+                for (var item in result) {
+                    var ref = result[item].ref;
+                    var searchitem = '<li><a href="' + ref + '">' + store[ref].title + '</a></li>';
+                    resultdiv.append(searchitem);
+                }
+                resultdiv.show();
+            }
+        });
+    });
+});
+    </script>
 </body>
 </html>
