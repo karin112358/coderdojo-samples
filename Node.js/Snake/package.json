@@ -1,0 +1,21 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ansi": "^0.3.1",
+    "axel": "0.0.3",
+    "keypress": "^0.2.1",
+    "node-gameloop": "^0.1.4",
+    "sleep": "^5.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  }
+}
