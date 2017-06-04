@@ -8,14 +8,13 @@ process.stdin.setRawMode(true);
 process.stdin.resume();
 
 var cursor = ansi(process.stdout);
-var defaultChar = ' ';
 var width = 40;
 var height = 20;
 var applePosX = 0;
 var applePosY = 0;
-var speed = 3;
 var dirX = 1;
 var dirY = 0;
+var speed = 3;
 var points = 0;
 var snake = [];
 
@@ -143,30 +142,32 @@ function drawApple() {
 }
 
 function drawSnake(grow) {
+    // remove last position
     if (!grow) {
         cursor.bg.black();
         drawPoint(snake[0].x, snake[0].y);
         snake.splice(0, 1);
     }
 
+    // draw new position
     cursor.bg.green();
     drawPoint(snake[snake.length - 1].x, snake[snake.length - 1].y);
     cursor.bg.reset();
 }
 
 function drawPoint(col, row, char) {
-    cursor.goto(col, row).write(defaultChar);
+    cursor.goto(col, row).write(' ');
 }
 
 function drawHorizontalLine(col, row, length) {
     for (var i = 0; i < length; i++) {
-        cursor.goto(col + i, row).write(defaultChar);
+        cursor.goto(col + i, row).write(' ');
     }
 }
 
 function drawVerticalLine(col, row, length) {
     for (var i = 0; i < length; i++) {
-        cursor.goto(col, row + i).write(defaultChar);
+        cursor.goto(col, row + i).write(' ');
     }
 }
 
