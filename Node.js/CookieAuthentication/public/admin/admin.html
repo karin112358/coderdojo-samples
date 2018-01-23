@@ -1,3 +1,23 @@
-<h1>Admin</h1>
-<p>Only for admins</p>
-<p><a href="/logout">Logout</a></p>
+<html>
+
+<head>
+    <title>Admin</title>
+</head>
+
+<body>
+    <h1>Admin</h1>
+    <p>Only for admins</p>
+    <p>Your color: <input id="colorPicker" type="color" onchange="changeColor()"></p>
+    <p>
+        <a href="/logout">Logout</a>
+    </p>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/client.js"></script>
+<script>
+    $( document ).ready(function() {
+        adminPageLoaded();
+    });
+</script>
+</html>

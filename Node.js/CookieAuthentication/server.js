@@ -1,5 +1,6 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var routes = require('./routes');
+var app = express();
 var server = require('http').createServer(app);
 var cookieParser = require('cookie-parser');
 
@@ -15,7 +16,6 @@ app.use(cookieParser('mySuperCookieParserSecret'));
 // check cookies in admin routes
 app.all('/admin/*', function (request, response, next) {
   // check authentication cookie
-  console.log(request.signedCookies);
   if (request.signedCookies.user != 'admin') {
     response.redirect('/login.html');
   } else {
@@ -23,23 +23,11 @@ app.all('/admin/*', function (request, response, next) {
   }
 });
 
-// ROUTES
-
-// login
-app.post('/login', function (request, response) {
-  if (request.body.username == 'admin' && request.body.password == 'admin') {
-    response.cookie('user', request.body.username, { signed: true });
-    response.sendStatus(200);
-  } else {
-    response.sendStatus(401);
-  }
-});
-
-// logout
-app.get('/logout', (request, response) => {
-  response.clearCookie('user');
-  response.redirect('/');
-});
+// routes
+app.post('/login', routes.login);
+app.get('/logout', routes.logout);
+app.get('/admin/color', routes.getColor);
+app.post('/admin/color', routes.setColor);
 
 // serve static content
 app.use('/', express.static('public'));

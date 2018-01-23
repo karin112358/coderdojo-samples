@@ -24,25 +24,6 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    function login() {
-        var data = {
-            username: $('#username').val(),
-            password: $('#password').val()
-        };
-
-        $.post({
-            url: '/login', 
-            data: JSON.stringify(data), 
-            contentType: 'application/json',
-            success: function (data, textStatus, jqXHR) {
-                location.href = '/admin/admin.html';
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert(errorThrown);
-            }
-        });
-    }
-</script>
+<script src="/client.js"></script>
 
 </html>
