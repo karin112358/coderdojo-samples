@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- https://codepen.io/gregoryBernard/pen/LVLbob -->
+  <link rel="stylesheet" href="styles/snake.css">
+</head>
+
+<body>
+  <div class="join-game">
+    <p>Username
+      <input type="text" id="username" />
+      <button onclick="joinGame()">Join Game</button>
+    </p>
+  </div>
+
+  <div class="waiting-for-user">
+    <p>Waiting for second user</p>
+  </div>
+
+  <div class="start-game">
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <div class="game">
+    <div class="score-containerdiv control">
+      <button class="start-btn">Start</button>
+      <div class="score-container">
+        <span>Score</span>
+        <div class="score"></div>
+      </div>
+      <div class="previous-container">
+        <span>Previous</span>
+        <div class="previous"></div>
+      </div>
+      <div class="moveCounter"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="scripts/snake.js"></script>
+  <script src="scripts/socketio.js"></script>
+</body>
+
+</html>

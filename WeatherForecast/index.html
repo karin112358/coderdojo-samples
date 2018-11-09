@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>Weather Forecast Service</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3>Welcome to the Weather Forecast Service</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">What to you want to know?</div>
+            <div class="col-sm-12">
+                <textarea id="weatherQuery" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary" onclick="getResponse()">Get Forecast</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-success" role="alert" id="weatherForecast"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-success" role="alert" id="luisResponse"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-success" role="alert" id="weatherResponse"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-warning" role="alert" id="error"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script src="javascript/settings.js"></script>
+    <script src="javascript/scripts.js"></script>
+</body>
+
+</html>

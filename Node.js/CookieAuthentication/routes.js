@@ -45,7 +45,7 @@ exports.setColor = function (request, response) {
 
 function isUserValid(username, password) {
     var users = db.getCollection('users');
-    return users.findOne({ username: username, password: password });
+    return users.findOne({ username: username, password: password }) != null;
 }
 
 function databaseInitialize() {
