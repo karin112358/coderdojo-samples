@@ -72,7 +72,6 @@ function setup() {
     // yeti sprite
     yeti = createSprite(300, 330, 115, 143);
     yeti.scale = 0.3;
-    yeti.setCollider('rectangle', 0, 20, 115, 143);
 
     // yeti animations
     const walkAnimation = new Animation('assets/yeti-walk-1.png', 'assets/yeti-walk-9.png');
@@ -113,7 +112,6 @@ function draw() {
         stopScene();
         gameOver = true;
         yeti.changeAnimation('dead');
-        console.error('GAME OVER');
     });
 
     moveYeti();
