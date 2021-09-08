@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./styles/styles.scss">
+</head>
+
+<body>
+    <div id="dashboard">
+        <div class="add">
+            <h3>Stadt hinzufügen</h3>
+            <p>Stadt<br /><input type="text" id="newCity" /></p>
+            <p><input type="radio" id="metric" name="units" value="metric" checked="true" /> <label
+                    for="metric">Celcius</label> <input type="radio" id="imperial" name="units" value="imperial" />
+                <label for="imperial">Fahrenheit</label>
+            </p>
+            <p><button onclick="addCity()">Hinzufügen</button></p>
+        </div>
+    </div>
+
+    <script src="./src/index.ts"></script>
+</body>
+
+</html>

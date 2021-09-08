@@ -1,0 +1,44 @@
+body {
+    background-color: #005A85;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 60px;
+}
+
+div#dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px;
+
+    > div {
+        position: relative;
+        margin: 20px;
+        width: 200px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #003852;
+        border-radius: 5px;
+        padding: 0 20px 20px 20px;
+
+        h3 {
+            color: #003852;
+        }
+
+        div.remove {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+}

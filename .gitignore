@@ -5,3 +5,5 @@ MyCordovaApp/
 MyIonicApp/
 PhoneGapSample/
 WeatherForecast/javascript/settings.js
+/weather-dashboard/.cache/
+/weather-dashboard/dist/
