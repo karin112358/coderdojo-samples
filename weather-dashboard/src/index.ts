@@ -2,7 +2,7 @@ import { IDBPDatabase, openDB } from 'idb';
 import { DashboardConfiguration } from './dashboard-configuration';
 import { Unit } from './unit';
 
-const apiKey = '5f123066e65d7d7d222b668bbb71e8cb';
+const apiKey = '';
 const dashboard = document.getElementById('dashboard');
 let db: IDBPDatabase;
 
