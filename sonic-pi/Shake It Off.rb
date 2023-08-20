@@ -40,7 +40,7 @@ end
 # SPLASH
 define :play_splash do
   live_loop :splash do
-    sample :drum_splash_hard, sustain: 1, release: 0.5
+    sample :drum_splash_hard, sustain: 1, release: 0.5, amp: 0.5
     sleep 8
   end
 end
