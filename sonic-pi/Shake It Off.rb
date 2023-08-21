@@ -98,8 +98,8 @@ define :play_bass_note do |pitch, duration|
   sleep duration
 end
 
-# GUITAR
-define :play_guitar do
+# CHORDS
+define :play_chords do
   in_thread do
     sleep 48
     
@@ -227,7 +227,7 @@ play_drums
 play_snare
 play_splash
 play_bass
-play_guitar
+play_chords
 play_voice
 
 
