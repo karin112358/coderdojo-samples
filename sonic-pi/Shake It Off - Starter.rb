@@ -2,100 +2,22 @@ use_bpm 160
 
 # DRUMS
 define :play_drums do
-  counter = 0
-  live_loop :drums do
-    counter = counter + 1
-    sample :drum_heavy_kick
-    sleep 1.5
-    sample :drum_heavy_kick
-    sleep 2
-    sample :drum_heavy_kick
-    sleep 0.5
-    
-    sample :drum_heavy_kick
-    sleep 2.5
-    sample :drum_heavy_kick
-    
-    if (counter % 2 == 1)
-      sleep 1.5
-    else
-      sleep 1
-      sample :drum_heavy_kick
-      sleep 0.5
-    end
-  end
+  
 end
-
 
 # SNARE
 define :play_snare do
-  live_loop :snare do
-    sleep 1
-    sample :drum_snare_hard
-    sleep 1
-  end
-end
 
+end
 
 # SPLASH
 define :play_splash do
-  live_loop :splash do
-    sample :drum_splash_hard, sustain: 1, release: 0.5, amp: 0.5
-    sleep 8
-  end
-end
 
+end
 
 # BASS
 define :play_bass do
-  in_thread do
-    sleep 16
-    
-    live_loop :bass do
-      sleep 0.5
-      play_bass_note(-3,0.5)
-      play_bass_note(-3,1)
-      play_bass_note(-3,2)
-      
-      play_bass_note(-3, 1)
-      play_bass_note(-3, 1.5)
-      play_bass_note(-3, 0.5)
-      play_bass_note(-3, 0.5)
-      play_bass_note(0, 0.5)
-      
-      sleep 0.5
-      play_bass_note(0, 0.5)
-      play_bass_note(0, 1)
-      play_bass_note(0, 2)
-      
-      play_bass_note(0, 1)
-      play_bass_note(0, 1.5)
-      play_bass_note(0, 0.5)
-      play_bass_note(0, 0.5)
-      play_bass_note(-7, 0.5)
-      
-      sleep 1
-      play_bass_note(-5, 1)
-      play_bass_note(-5, 5.5)
-      play_bass_note(-7, 0.5)
-      
-      sleep 1
-      play_bass_note(-5, 1)
-      play_bass_note(-5, 5)
-      play_bass_note(-5, 1)
-    end
-  end
-end
 
-
-define :play_bass_note do |pitch, duration|
-  amp = 1
-  if pitch != 0
-    amp = 4
-  end
-  
-  sample :bass_voxy_hit_c, pitch: pitch, amp: amp
-  sleep duration
 end
 
 # CHORDS
@@ -120,7 +42,6 @@ define :play_chords do
     end
   end
 end
-
 
 # VOICE
 define :play_voice do
@@ -223,12 +144,9 @@ define :play_voice_notes do |notes, durations|
   end
 end
 
-play_drums
-play_snare
-play_splash
-play_bass
-play_chords
+#play_drums
+#play_snare
+#play_splash
+#play_bass
+#play_chords
 play_voice
-
-
-
