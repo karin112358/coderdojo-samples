@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Default Dark+",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.ejs": "html"
+  },
+  "html.format.templating": true
+}

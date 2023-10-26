@@ -1,0 +1,18 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": false,
+  "deno.suggest.imports.autoDiscover": true,
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
+  },
+  "workbench.colorCustomizations": {
+    "sash.hoverBorder": "#e662f0",
+    "statusBar.background": "#de34eb",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#e662f0",
+    "statusBarItem.remoteBackground": "#de34eb",
+    "statusBarItem.remoteForeground": "#e7e7e7"
+  },
+  "peacock.color": "#de34eb"
+}

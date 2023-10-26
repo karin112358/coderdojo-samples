@@ -1,0 +1,1 @@
+{"version":3,"sources":["scss\\styles.scss"],"names":[],"mappings":"AAAA;EACI,8DAAA","file":"src.f10117fe.css","sourceRoot":"..","sourcesContent":["body {\r\n    background-image: url('./images/backgrounds/1_game_background.png');\r\n}"]}

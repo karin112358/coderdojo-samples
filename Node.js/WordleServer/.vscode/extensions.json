@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "eg2.vscode-npm-script",
+        "mikestead.dotenv",
+        "usernamehw.errorlens",
+        "vscode-icons-team.vscode-icons",
+        "codezombiech.gitignore",
+        "esbenp.prettier-vscode",
+        "humao.rest-client",
+        "adamhartford.vscode-base64",
+        "DigitalBrainstem.javascript-ejs-support",
+    ],
+    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+    "unwantedRecommendations": []
+}

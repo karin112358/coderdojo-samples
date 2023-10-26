@@ -1,0 +1,45 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#input-area {
+  margin-top: 20px;
+}
+
+#input-area button {
+  margin-left: 10px;
+}
+
+#output-area {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 3px;
+}
+
+#output-area > div {
+  background-color: #bbb;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#output-area > div.correct-spot {
+  background-color: #24b300;
+}
+
+#output-area > div.wrong-spot {
+  background-color: #b8a500;
+}

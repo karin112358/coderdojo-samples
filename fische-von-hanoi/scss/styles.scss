@@ -1,0 +1,147 @@
+body {
+  background-image: url('/static/images/backgrounds/3_game_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: bottom;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#game-area {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15vh;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(13, 7vw);
+  grid-gap: 2px;
+  grid-auto-rows: 7vw;
+}
+
+.points {
+  position: absolute;
+  top: 4.5vw;
+  left: 4.5vw;
+  width: 20vw;
+  height: 15vw;
+  background-image: url('/static/images/window_1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+  opacity: 0.7;
+
+  display: flex;
+  font-size: 4vw;
+  color: #fff;
+  font-family: 'Fruktur', cursive;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 3vw;
+}
+
+.tile {
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  &.selected {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.barrel {
+  background-image: url('/static/images/barrel-1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+.animal {
+  background-size: calc(7vw * 10);
+  background-repeat: no-repeat;
+  background-position-y: center;
+
+  &.animal-a,
+  &.animal-c {
+    width: 7vw;
+    height: 7vw;
+    animation: play-crab 2s steps(10) infinite;
+  }
+
+  &.animal-b,
+  &.animal-d {
+    width: 5vw;
+    height: 7vw;
+    background-size: 5vw * 10 calc(5vw / 227 * 239);
+    animation: play-jellyfish 2s steps(10) infinite;
+  }
+
+  &.animal-a {
+    background-image: url('/static/images/crab-1.png');
+  }
+
+  &.animal-b {
+    background-image: url('/static/images/jellyfish-2.png');
+  }
+
+  &.animal-c {
+    background-image: url('/static/images/crab-2.png');
+  }
+
+  &.animal-d {
+    background-image: url('/static/images/jellyfish-3.png');
+  }
+}
+
+.target-a,
+.target-b,
+.target-c,
+.target-d {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1.5vw;
+  height: 1.5vw;
+  background-size: calc(1.5vw * 10) 1.5vw;
+}
+
+.target-a {
+  background-image: url('/static/images/crab-1.png');
+}
+
+.target-b {
+  background-image: url('/static/images/jellyfish-2.png');
+}
+
+.target-c {
+  background-image: url('/static/images/crab-2.png');
+}
+
+.target-d {
+  background-image: url('/static/images/jellyfish-3.png');
+}
+
+@keyframes play-crab {
+  100% {
+    background-position: calc(7vw * -10);
+  }
+}
+
+@keyframes play-jellyfish {
+  100% {
+    background-position: calc(5vw * -10);
+  }
+}

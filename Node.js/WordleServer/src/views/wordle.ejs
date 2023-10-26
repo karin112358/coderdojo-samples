@@ -1,0 +1,25 @@
+<%- include('_header.ejs', { title: 'Wordle' }) %>
+
+<div id="output-area">
+    <% const splitGuesses = previousGuesses.split('_'); 
+
+    if (previousGuesses.length) {
+        for (let previousGuesses of splitGuesses) {
+            while(previousGuesses.length < 5) {
+                previousGuesses += ' ';
+            }
+
+            previousGuess = previousGuesses.substr(0, Math.min(previousGuess.length, 5));
+        }
+    }
+
+    %>
+</div>
+
+<form action="wordle" method="post" id="input-area">
+    <input type="text" name="guess" autofocus /><button type="submit">Guess Word</button>
+
+    <input type="hidden" name="previousGuesses" value="<%=previousGuesses%>" />
+</form>
+
+<%- include('_footer.ejs') %>
