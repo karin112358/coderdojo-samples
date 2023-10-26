@@ -7,3 +7,4 @@ PhoneGapSample/
 WeatherForecast/javascript/settings.js
 /weather-dashboard/.cache/
 /weather-dashboard/dist/
+/node-web-server-send-grid/server/config/*
